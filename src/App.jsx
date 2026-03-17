@@ -985,9 +985,9 @@ const AdminDashboard = ({ tournaments, setTournaments, players, registrations, s
 
 // --- STYLES ---
 const styles = {
-  appWrap: { fontFamily: "'DM Sans', sans-serif", background: "#F7F8FA", minHeight: "100vh", maxWidth: 480, margin: "0 auto", position: "relative", paddingBottom: 80, color: "#222" },
+  appWrap: { fontFamily: "'DM Sans', sans-serif", background: "#F7F8FA", minHeight: "100vh", maxWidth: 480, margin: "0 auto", position: "relative", paddingBottom: 80, color: "#222", overflowX: "hidden", width: "100%" },
   pageContent: { minHeight: "calc(100vh - 80px)" },
-  page: { padding: "20px 16px" },
+  page: { padding: "20px 16px", maxWidth: "100%", overflowX: "hidden" },
 
   // Landing
   landing: { minHeight: "100vh", position: "relative" },
@@ -1001,7 +1001,7 @@ const styles = {
 
   // Auth
   authWrap: { minHeight: "100vh", background: "#F7F8FA", display: "flex", alignItems: "center", justifyContent: "center", padding: 16 },
-  authCard: { background: "#fff", borderRadius: 20, padding: "32px 24px", width: "100%", maxWidth: 400, boxShadow: "0 4px 24px rgba(0,0,0,0.06)" },
+  authCard: { background: "#fff", borderRadius: 20, padding: "32px 24px", width: "100%", maxWidth: 400, boxShadow: "0 4px 24px rgba(0,0,0,0.06)", boxSizing: "border-box" },
   authLogo: { fontSize: 28, fontWeight: 800, color: "#1A5D3A", fontFamily: "'Outfit', sans-serif", textAlign: "center", letterSpacing: -0.5 },
   authTitle: { fontSize: 22, fontWeight: 700, textAlign: "center", marginTop: 8, marginBottom: 4 },
   authSub: { fontSize: 14, color: "#888", textAlign: "center", marginBottom: 24 },
@@ -1009,12 +1009,12 @@ const styles = {
 
   // Inputs
   label: { display: "block", fontSize: 13, fontWeight: 600, color: "#444", marginBottom: 6 },
-  input: { width: "100%", padding: "12px 14px", borderRadius: 10, border: "1px solid #E0E0E0", fontSize: 15, fontFamily: "'DM Sans', sans-serif", outline: "none", boxSizing: "border-box", background: "#FAFAFA", transition: "border-color 0.2s" },
-  select: { width: "100%", padding: "12px 14px", borderRadius: 10, border: "1px solid #E0E0E0", fontSize: 15, fontFamily: "'DM Sans', sans-serif", outline: "none", boxSizing: "border-box", background: "#FAFAFA", appearance: "none" },
+  input: { width: "100%", padding: "12px 14px", borderRadius: 10, border: "1px solid #E0E0E0", fontSize: 15, fontFamily: "'DM Sans', sans-serif", outline: "none", boxSizing: "border-box", background: "#FAFAFA", transition: "border-color 0.2s", WebkitAppearance: "none" },
+  select: { width: "100%", padding: "12px 14px", borderRadius: 10, border: "1px solid #E0E0E0", fontSize: 15, fontFamily: "'DM Sans', sans-serif", outline: "none", boxSizing: "border-box", background: "#FAFAFA", appearance: "none", WebkitAppearance: "none" },
   uploadBox: { display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, padding: "24px 16px", borderRadius: 12, border: "2px dashed #D0D0D0", cursor: "pointer", background: "#FAFAFA" },
 
   // Buttons
-  primaryBtn: { width: "100%", padding: "14px", borderRadius: 12, border: "none", background: "#1A5D3A", color: "#fff", fontSize: 15, fontWeight: 600, fontFamily: "'DM Sans', sans-serif", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 8 },
+  primaryBtn: { width: "100%", padding: "14px", borderRadius: 12, border: "none", background: "#1A5D3A", color: "#fff", fontSize: 15, fontWeight: 600, fontFamily: "'DM Sans', sans-serif", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 8, boxSizing: "border-box" },
   ghostBtn: { width: "100%", padding: "12px", borderRadius: 12, border: "none", background: "transparent", color: "rgba(255,255,255,0.7)", fontSize: 14, fontFamily: "'DM Sans', sans-serif", cursor: "pointer", marginTop: 8 },
   primaryBtnSm: { padding: "8px 16px", borderRadius: 8, border: "none", background: "#1A5D3A", color: "#fff", fontSize: 13, fontWeight: 600, fontFamily: "'DM Sans', sans-serif", cursor: "pointer" },
   outlineBtnSm: { padding: "8px 16px", borderRadius: 8, border: "1px solid #1A5D3A", background: "transparent", color: "#1A5D3A", fontSize: 13, fontWeight: 600, fontFamily: "'DM Sans', sans-serif", cursor: "pointer" },
@@ -1022,13 +1022,13 @@ const styles = {
   link: { color: "#1A5D3A", fontWeight: 600, cursor: "pointer" },
 
   // Cards
-  card: { background: "#fff", borderRadius: 14, padding: "16px", marginBottom: 12, boxShadow: "0 1px 4px rgba(0,0,0,0.04)", border: "1px solid #F0F0F0" },
+  card: { background: "#fff", borderRadius: 14, padding: "16px", marginBottom: 12, boxShadow: "0 1px 4px rgba(0,0,0,0.04)", border: "1px solid #F0F0F0", overflow: "hidden" },
   cardTitle: { fontSize: 16, fontWeight: 700, margin: 0, color: "#222" },
   cardMeta: { fontSize: 13, color: "#888", margin: "4px 0 0" },
 
   // Navigation
-  bottomNav: { position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "100%", maxWidth: 480, background: "#fff", borderTop: "1px solid #eee", display: "flex", justifyContent: "space-around", padding: "8px 0 env(safe-area-inset-bottom, 8px)", zIndex: 100 },
-  navBtn: { background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 2, cursor: "pointer", fontFamily: "'DM Sans', sans-serif", padding: "4px 12px" },
+  bottomNav: { position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "100vw", maxWidth: 480, background: "#fff", borderTop: "1px solid #eee", display: "flex", justifyContent: "space-around", padding: "8px 0 env(safe-area-inset-bottom, 8px)", zIndex: 100, boxSizing: "border-box" },
+  navBtn: { background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 2, cursor: "pointer", fontFamily: "'DM Sans', sans-serif", padding: "4px 8px", minWidth: 0 },
   badge: { position: "absolute", top: -4, right: -6, width: 16, height: 16, borderRadius: "50%", background: "#DC2626", color: "#fff", fontSize: 10, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" },
 
   // Dashboard
@@ -1040,7 +1040,7 @@ const styles = {
   alertBtn: { position: "relative", background: "none", border: "none", cursor: "pointer", padding: 8 },
   alertBadge: { position: "absolute", top: 2, right: 2, width: 16, height: 16, borderRadius: "50%", background: "#DC2626", color: "#fff", fontSize: 10, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" },
 
-  walletCard: { background: "linear-gradient(135deg, #0D2818, #1A5D3A, #2D8F5E)", borderRadius: 16, padding: "20px", marginBottom: 16, cursor: "pointer" },
+  walletCard: { background: "linear-gradient(135deg, #0D2818, #1A5D3A, #2D8F5E)", borderRadius: 16, padding: "20px", marginBottom: 16, cursor: "pointer", overflow: "hidden" },
 
   gridTwo: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 8 },
   actionCard: { background: "#fff", borderRadius: 14, padding: "20px 16px", display: "flex", flexDirection: "column", alignItems: "center", gap: 8, border: "1px solid #F0F0F0", cursor: "pointer", boxShadow: "0 1px 4px rgba(0,0,0,0.03)" },
